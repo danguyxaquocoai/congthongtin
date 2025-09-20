@@ -4,9 +4,21 @@ function getMemberIdFromUrl() {
   return match ? match[1] : null;
 }
 
+
+function getDataPrefix() {
+  // Nếu chạy trên GitHub Pages repo congthongtin thì prefix là /congthongtin
+  if (window.location.hostname.endsWith('github.io')) {
+    const repo = '/congthongtin';
+    return repo + '/data/members/';
+  }
+  // Local dev hoặc custom domain
+  return '/data/members/';
+}
+
 async function fetchMemberData(memberId) {
   try {
-    const res = await fetch(`/data/members/${memberId}/info.json`);
+    const prefix = getDataPrefix();
+    const res = await fetch(`${prefix}${memberId}/info.json`);
     if (!res.ok) throw new Error('Không tìm thấy dữ liệu thành viên');
     return await res.json();
   } catch (e) {
