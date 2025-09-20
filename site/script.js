@@ -48,7 +48,7 @@ function renderMemberCard(data, memberId) {
       <img src="${logoUrl}" class="card-logo" alt="Logo">
       <div class="card-title">${data.title || ''}</div>
       <div class="d-flex flex-column align-items-center">
-        <img src="${avatarUrl}" class="card-avatar" alt="Avatar" onerror="this.onerror=null;this.src='${defAvatar}';">
+        <img src="${avatarUrl}" class="card-avatar" alt="Avatar" data-fallback="${defAvatar}" onerror="if(this.src!==this.getAttribute('data-fallback')){this.src=this.getAttribute('data-fallback');}">
       </div>
       <div class="mt-2">
         ${fields.map(f => `
