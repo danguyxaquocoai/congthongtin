@@ -5,14 +5,16 @@ function getMemberIdFromUrl() {
 }
 
 
-function getDataPrefix() {
+function getRepoPrefix() {
   // Nếu chạy trên GitHub Pages repo congthongtin thì prefix là /congthongtin
   if (window.location.hostname.endsWith('github.io')) {
-    const repo = '/congthongtin';
-    return repo + '/data/members/';
+    return '/congthongtin';
   }
-  // Local dev hoặc custom domain
-  return '/data/members/';
+  return '';
+}
+
+function getDataPrefix() {
+  return getRepoPrefix() + '/data/members/';
 }
 
 async function fetchMemberData(memberId) {
@@ -27,8 +29,10 @@ async function fetchMemberData(memberId) {
 }
 
 function renderMemberCard(data, memberId) {
-  const logoUrl = '/data/card/logo.jpg';
-  const avatarUrl = `/data/members/${memberId}/avatar.jpg`;
+  const repoPrefix = getRepoPrefix();
+  const logoUrl = repoPrefix + '/data/card/logo.jpg';
+  const avatarUrl = repoPrefix + `/data/members/${memberId}/avatar.jpg`;
+  const defAvatar = repoPrefix + '/data/card/def-avatar.png';
   const fields = [
     { label: 'Số thẻ', key: 'card_number' },
     { label: 'Họ và tên', key: 'full_name' },
@@ -44,7 +48,7 @@ function renderMemberCard(data, memberId) {
       <img src="${logoUrl}" class="card-logo" alt="Logo">
       <div class="card-title">${data.title || ''}</div>
       <div class="d-flex flex-column align-items-center">
-        <img src="${avatarUrl}" class="card-avatar" alt="Avatar">
+        <img src="${avatarUrl}" class="card-avatar" alt="Avatar" onerror="this.onerror=null;this.src='${defAvatar}';">
       </div>
       <div class="mt-2">
         ${fields.map(f => `
