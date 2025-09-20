@@ -1,0 +1,60 @@
+body {
+  background: #fff url('../requirement/data/card/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.card-member {
+  margin: 5px 5px 0 5px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.95);
+  position: relative;
+  overflow: hidden;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.card-logo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  white-space: pre-line;
+}
+
+.card-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.card-value {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.card-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 2px solid #eee;
+}
+
+@media (max-width: 600px) {
+  .card-member {
+    max-width: 98vw;
+    min-width: unset;
+  }
+}
