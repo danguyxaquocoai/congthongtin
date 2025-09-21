@@ -30,23 +30,23 @@ async function fetchMemberData(memberId) {
 
 function renderMemberCard(data, memberId) {
   const repoPrefix = getRepoPrefix();
-  const logoUrl = repoPrefix + '/data/card/logo.jpg';
+  const logoUrl = repoPrefix + '/data/card/logo.svg';
   const avatarUrl = repoPrefix + `/data/members/${memberId}/avatar.jpg`;
   const defAvatar = repoPrefix + '/data/card/def-avatar.png';
   const fields = [
-    { label: 'Số thẻ', key: 'card_number' },
+    { label: 'Mã số thẻ', key: 'card_number' },
     { label: 'Họ và tên', key: 'full_name' },
     { label: 'Ngày sinh', key: 'birth_date' },
     { label: 'Giới tính', key: 'gender' },
     { label: 'CCCD', key: 'citizen_id' },
-    { label: 'Tổ chức', key: 'organization' },
+    { label: 'Tên cơ quan', key: 'organization' },
     { label: 'Phòng ban', key: 'department' },
     { label: 'Chức vụ', key: 'position' }
   ];
   return `
     <div class="card card-member mx-auto mt-4 p-3">
       <img src="${logoUrl}" class="card-logo" alt="Logo">
-      <div class="card-title">${data.title || ''}</div>
+      <div class="card-title" style="margin-left:64px">${data.title || ''}</div>
       <div class="d-flex flex-column align-items-center">
         <img src="${avatarUrl}" class="card-avatar" alt="Avatar" data-fallback="${defAvatar}" onerror="if(this.src!==this.getAttribute('data-fallback')){this.src=this.getAttribute('data-fallback');}">
       </div>
