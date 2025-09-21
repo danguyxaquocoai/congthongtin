@@ -45,8 +45,10 @@ function renderMemberCard(data, memberId) {
   ];
   return `
     <div class="card card-member mx-auto mt-4 p-3">
-      <img src="${logoUrl}" class="card-logo" alt="Logo">
-      <div class="card-title" style="margin-left:64px">${data.title || ''}</div>
+      <div class="card-header-area">
+        <img src="${logoUrl}" class="card-logo" alt="Logo">
+        <div class="card-title">${data.title || ''}</div>
+      </div>
       <div class="d-flex flex-column align-items-center">
         <img src="${avatarUrl}" class="card-avatar" alt="Avatar" data-fallback="${defAvatar}" onerror="if(this.src!==this.getAttribute('data-fallback')){this.src=this.getAttribute('data-fallback');}">
       </div>
