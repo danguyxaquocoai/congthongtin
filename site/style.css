@@ -26,15 +26,15 @@ body {
 }
 .card-logo {
   position: static;
-  width: 56px;
-  height: 56px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   margin-right: 12px;
 }
 
 .card-title {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 0;
   margin-top: 4px;
   color: #b71c1c;
