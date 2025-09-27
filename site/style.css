@@ -1,73 +1,75 @@
 body {
-  background: #fff url('./data/card/bg.jpg') no-repeat center center fixed;
-  background-size: cover;
+    background: #fff url('./data/card/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .card-member {
-  margin: 5px 5px 0 5px;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.95);
-  position: relative;
-  overflow: hidden;
-  min-width: 280px;
-  max-width: 400px;
+    margin: 5px 5px 0 5px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+    max-width: 400px;
 }
 
 .card-header-area {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  background: linear-gradient(90deg, #fff5f5 60%, #ffeaea 100%);
-  border-radius: 12px 12px 0 0;
-  padding: 12px 12px 12px 12px;
-  margin: -16px -16px 12px -16px;
-  min-height: 56px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(90deg, #fff5f5 60%, #ffeaea 100%);
+    border-radius: 12px 12px 0 0;
+    padding: 12px 12px 12px 12px;
+    margin: -16px -16px 12px -16px;
+    min-height: 56px;
 }
+
 .card-logo {
-  position: static;
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  margin-right: 12px;
+    position: static;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-right: 12px;
 }
 
 .card-title {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 0;
-  margin-top: 4px;
-  color: #b71c1c;
-  white-space: pre-line;
-  line-height: 1.3;
-  text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0;
+    margin-top: 4px;
+    color: #b71c1c;
+    white-space: pre-line;
+    line-height: 1.3;
+    text-align: center;
 }
 
 .card-label {
-  font-size: 0.85rem;
-  color: #888;
-  margin-top: 8px;
-  margin-bottom: 0;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 8px;
+    margin-bottom: 0;
 }
 
 .card-value {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0;
 }
 
 .card-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  object-fit: cover;
-  margin-bottom: 12px;
-  border: 2px solid #eee;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid #eee;
+    object-position: top center;
 }
 
 @media (max-width: 600px) {
-  .card-member {
-    max-width: 98vw;
-    min-width: unset;
-  }
+    .card-member {
+        max-width: 98vw;
+        min-width: unset;
+    }
 }
